@@ -1,0 +1,18 @@
+﻿
+# GOOD
+tempdir=C:\\Windows\\Temp
+
+# WORKS
+tempdir='C:\\Windows\\Temp'
+tempdir="C:\\Windows\\Temp"
+
+# BAD, BUT SOMETIMES WORKS
+tempdir=C:\Windows\Temp
+tempdir='C:\Windows\Temp'
+tempdir="C:\Windows\Temp"
+tempdir=C:/Windows/Temp
+
+# FAILS
+tempdir=C:\Windows\temp
+tempdir='C:\Windows\temp'
+tempdir="C:\Windows\temp"

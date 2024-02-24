@@ -1,0 +1,12 @@
+---
+- name: Read File
+  hosts: Windows
+  gather_facts: false
+  tasks:
+  - name: Get File Contents
+    win_shell: 'type c:\copy\file.txt'
+    register: file_contents
+
+  - name: Display Content
+    debug:
+      msg: "{{  file_contents.stdout_lines  }}"   

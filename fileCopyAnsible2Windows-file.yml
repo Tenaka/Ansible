@@ -1,0 +1,14 @@
+---
+- name: Copy
+  hosts: Windows
+  become: false
+  gather_facts: false
+  vars:
+    source: ping.yml
+    destination: "Desktop/ping.yml"
+  tasks:
+   - name: copy ping
+     ansible.windows.win_copy:
+       src: "{{ source }}"
+       dest: "{{ destination }}"
+

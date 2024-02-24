@@ -1,0 +1,10 @@
+---
+- name: Copy
+  hosts: Windows
+  become: false
+  gather_facts: false
+  tasks:
+   - name: copy file
+     ansible.windows.win_copy:
+       src: "/home/user/Documents/Ansible"
+       dest: "Desktop/"

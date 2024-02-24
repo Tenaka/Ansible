@@ -1,0 +1,11 @@
+---
+- name: cmds
+  hosts: Windows
+  become: false
+  gather_facts: false
+
+  tasks:
+   - name: some cmd
+     win_command: cmd.exe /c whoami.exe > "Desktop\whoami.txt"
+   - name: ipconfig
+     win_command: cmd.exe /c ipconfig /all > "Desktop\ipconfig.txt"

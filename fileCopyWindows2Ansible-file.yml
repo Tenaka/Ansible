@@ -1,0 +1,17 @@
+---
+- name: Copy
+  hosts: Windows
+  become: false
+  become_user: false
+  gather_facts: false
+  vars:
+    source: "Desktop/test1.txt"
+    destination: "/home/user/Documents/Ansible/test1.txt"
+  tasks:
+   - name: copy ping     
+     #ansible.windows.win_copy:
+     ansible.builtin.fetch:
+       src: "{{ source }}"
+       dest: "{{ destination }}"
+       #remote_src: yes     
+     #delegate_to: localhost

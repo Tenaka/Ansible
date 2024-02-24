@@ -1,0 +1,9 @@
+---
+
+- name: Ping Windows Test
+  hosts: Windows
+  gather_facts: false
+
+  tasks:
+  - name: Ping targets
+    win_ping: 
